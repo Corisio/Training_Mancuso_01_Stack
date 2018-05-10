@@ -13,5 +13,16 @@ namespace Tests
 
             Assert.IsNull(stack.Pop());
         }
+
+        [Test]
+        public void PopTheLastPushedObject()
+        {
+            OurStack stack = new OurStack();
+
+            stack.Push("otroItem");
+            stack.Push("item");
+
+            Assert.AreEqual("item", stack.Pop());
+        }
     }
 }
