@@ -21,6 +21,12 @@ namespace Tests
         }
 
         [Test]
+        public void NotThrowAnExceptionWhenPushingWhileEmpty()
+        {
+            Assert.DoesNotThrow(() => _stack.Push(new object()));
+        }
+
+        [Test]
         public void PopTheLastPushedObject()
         {
             _stack.Push("otroItem");
