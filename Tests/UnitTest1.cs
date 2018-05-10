@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using SandroMancusoTraining_Project1;
 
 namespace Tests
@@ -6,19 +7,23 @@ namespace Tests
     [TestFixture]
     public class OurStackShould
     {
-        [Test]
-        public void HaveNoContent_WhenCreated() 
-        {
-            OurStack stack = new OurStack();
+        private OurStack stack;
 
-            Assert.IsNull(stack.Pop());
+        [SetUp]
+        public void SetUp()
+        {
+            stack = new OurStack();
+        }
+
+        [Test]
+        public void FailWhenPopingAfterJustCreated() 
+        {
+            Assert.Throws<Exception>(() => stack.Pop());
         }
 
         [Test]
         public void PopTheLastPushedObject()
         {
-            OurStack stack = new OurStack();
-
             stack.Push("otroItem");
             stack.Push("item");
 

@@ -8,6 +8,8 @@ namespace SandroMancusoTraining_Project1
 
         public object Pop()
         {
+            if (lastPushedObject == null)
+                throw new Exception();
             return lastPushedObject;
         }
 
