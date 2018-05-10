@@ -18,7 +18,7 @@ namespace Tests
         [Test]
         public void ThrowAnExceptionWhenPopingWhileEmpty() 
         {
-            Assert.Throws<Exception>(() => _stack.Pop());
+            Assert.Throws<EmptyStackException>(() => _stack.Pop());
         }
 
         [Test]

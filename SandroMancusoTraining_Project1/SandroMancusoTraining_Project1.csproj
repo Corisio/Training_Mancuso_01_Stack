@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmptyStackException.cs" />
     <Compile Include="OurStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

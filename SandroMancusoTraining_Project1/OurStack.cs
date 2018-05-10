@@ -16,7 +16,7 @@ namespace SandroMancusoTraining_Project1
         public object Pop()
         {
             if (_pushedObjects.Count == 0)
-                throw new Exception();
+                throw new EmptyStackException();
             return GetLastPushedObject();
         }
 
