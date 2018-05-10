@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace SandroMancusoTraining_Project1
@@ -15,14 +14,19 @@ namespace SandroMancusoTraining_Project1
 
         public object Pop()
         {
-            if (_pushedObjects.Count == 0)
-                throw new EmptyStackException();
+            GuardAgainstEmptyStack();
             return GetLastPushedObject();
         }
 
         public void Push(object item)
         {
             _pushedObjects.Add(item);
+        }
+
+        private void GuardAgainstEmptyStack()
+        {
+            if (_pushedObjects.Count == 0)
+                throw new EmptyStackException();
         }
 
         private object GetLastPushedObject()

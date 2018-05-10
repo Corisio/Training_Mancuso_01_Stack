@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SandroMancusoTraining_Project1;
 
 namespace Tests
