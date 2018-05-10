@@ -7,27 +7,39 @@ namespace Tests
     [TestFixture]
     public class OurStackShould
     {
-        private OurStack stack;
+        private OurStack _stack;
 
         [SetUp]
         public void SetUp()
         {
-            stack = new OurStack();
+            _stack = new OurStack();
         }
 
         [Test]
-        public void FailWhenPopingAfterJustCreated() 
+        public void ThrowAnExceptionWhenPopingWhileEmpty() 
         {
-            Assert.Throws<Exception>(() => stack.Pop());
+            Assert.Throws<Exception>(() => _stack.Pop());
         }
 
         [Test]
         public void PopTheLastPushedObject()
         {
-            stack.Push("otroItem");
-            stack.Push("item");
+            _stack.Push("otroItem");
+            _stack.Push("item");
 
-            Assert.AreEqual("item", stack.Pop());
+            Assert.AreEqual("item", _stack.Pop());
+        }
+
+        [Test]
+        public void PopAllThePushedObjectsInReverseOrder()
+        {
+            _stack.Push("item1");
+            _stack.Push("item2");
+            _stack.Push("item3");
+
+            Assert.AreEqual("item3", _stack.Pop());
+            Assert.AreEqual("item2", _stack.Pop());
+            Assert.AreEqual("item1", _stack.Pop());
         }
     }
 }
